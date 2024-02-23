@@ -1,10 +1,20 @@
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+local function nmap(key, command, opts)
+  opts = opts or {}
+	vim.keymap.set('n', key, command,opts)
+end
+
+local function vmap(key, command, opts)
+  opts = opts or {}
+	vim.keymap.set('v', key, command,opts)
+end
+
+vmap("J", ":m '>+1<CR>gv=gv")
+vmap("K", ":m '<-2<CR>gv=gv")
+nmap('J', "mzJ`z")
+nmap("<C-d>", "<C-d>zz")
+nmap("<C-u>", "<C-u>zz")
+nmap("n", "nzzzv")
+nmap("N", "Nzzzv")
 
 -- OIL
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+nmap("-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
