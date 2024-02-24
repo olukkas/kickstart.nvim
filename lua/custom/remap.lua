@@ -16,7 +16,7 @@ nmap("<C-u>", "<C-u>zz")
 nmap("n", "nzzzv")
 nmap("N", "Nzzzv")
 nmap('<leader>ww', '<cmd>w<cr>', { desc = "Write the changes made in current buffer" })
-nmap('<leader>qq', '<cmd>q<cr>', { desc = "Quit" })
+-- nmap('<leader>qq', '<cmd>q<cr>', { desc = "Quit" })
 
 -- OIL
 nmap("-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
